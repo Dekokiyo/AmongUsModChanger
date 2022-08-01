@@ -128,7 +128,7 @@ namespace AmongUsModChanger
             }
             if (!System.IO.File.Exists(AmongUsVanillaCopy + "\\Among Us.exe"))
             {
-                CopyDirectory(AmongUsFolderPass, AmongUsVanillaCopy);
+                CopyDirectory(Path.GetDirectoryName(AmongUsDirectory.Text), AmongUsVanillaCopy);
             }
         }
 
@@ -461,11 +461,11 @@ namespace AmongUsModChanger
                 Preset8TextBox.Text = "Preset8";
                 Preset9TextBox.Text = "Preset9";
                 Preset10TextBox.Text = "Preset10";
-                MessageBox.Show("リセットしました。", "リセット");
+                MessageBox.Show("リセットしました。", "リセット", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("キャンセルしました。", "キャンセル");
+                MessageBox.Show("キャンセルしました。", "キャンセル", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
