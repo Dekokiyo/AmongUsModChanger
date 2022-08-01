@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AmongUsModChanger));
             this.SelectDirectory = new System.Windows.Forms.OpenFileDialog();
             this.DirectoryBtn = new System.Windows.Forms.Button();
-            this.AmongUsDirectory = new System.Windows.Forms.TextBox();
             this.ChooseAmongUsDirectory = new System.Windows.Forms.Label();
             this.Preset1Button = new System.Windows.Forms.Button();
             this.SelectModText = new System.Windows.Forms.Label();
@@ -78,15 +77,20 @@
             this.DiscordServerLink = new System.Windows.Forms.LinkLabel();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.UpdateIsAllived = new System.Windows.Forms.Label();
+            this.ChoosingPreset = new System.Windows.Forms.Label();
+            this.PresetName = new System.Windows.Forms.Label();
+            this.RemoveVanilla = new System.Windows.Forms.Button();
+            this.Version = new System.Windows.Forms.Label();
+            this.AmongUsDirectory = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
+            //
             // SelectDirectory
-            // 
+            //
             this.SelectDirectory.FileName = "SelectDirectory";
             this.SelectDirectory.Filter = "Among Us.exe|Among Us.exe";
-            // 
+            //
             // DirectoryBtn
-            // 
+            //
             this.DirectoryBtn.Location = new System.Drawing.Point(633, 39);
             this.DirectoryBtn.Name = "DirectoryBtn";
             this.DirectoryBtn.Size = new System.Drawing.Size(82, 23);
@@ -94,18 +98,9 @@
             this.DirectoryBtn.Text = "参照";
             this.DirectoryBtn.UseVisualStyleBackColor = true;
             this.DirectoryBtn.Click += new System.EventHandler(this.DirectoryBtn_Click);
-            // 
-            // AmongUsDirectory
-            // 
-            this.AmongUsDirectory.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.AmongUsDirectory.Location = new System.Drawing.Point(12, 39);
-            this.AmongUsDirectory.Name = "AmongUsDirectory";
-            this.AmongUsDirectory.ReadOnly = true;
-            this.AmongUsDirectory.Size = new System.Drawing.Size(615, 23);
-            this.AmongUsDirectory.TabIndex = 1;
-            // 
+            //
             // ChooseAmongUsDirectory
-            // 
+            //
             this.ChooseAmongUsDirectory.AutoSize = true;
             this.ChooseAmongUsDirectory.Font = new System.Drawing.Font("MS UI Gothic", 18F);
             this.ChooseAmongUsDirectory.Location = new System.Drawing.Point(7, 9);
@@ -113,9 +108,9 @@
             this.ChooseAmongUsDirectory.Size = new System.Drawing.Size(625, 24);
             this.ChooseAmongUsDirectory.TabIndex = 2;
             this.ChooseAmongUsDirectory.Text = "AmongUsのゲームディレクトリを指定してください。(Among Us.exe)";
-            // 
+            //
             // Preset1Button
-            // 
+            //
             this.Preset1Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset1Button.Location = new System.Drawing.Point(16, 120);
             this.Preset1Button.Name = "Preset1Button";
@@ -123,9 +118,10 @@
             this.Preset1Button.TabIndex = 3;
             this.Preset1Button.Text = "Preset1";
             this.Preset1Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset1Button.Click += new System.EventHandler(this.Preset1Button_Click);
+            //
             // SelectModText
-            // 
+            //
             this.SelectModText.AutoSize = true;
             this.SelectModText.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.SelectModText.Location = new System.Drawing.Point(105, 82);
@@ -133,9 +129,9 @@
             this.SelectModText.Size = new System.Drawing.Size(133, 20);
             this.SelectModText.TabIndex = 4;
             this.SelectModText.Text = "プリセットを選択";
-            // 
+            //
             // Preset2Button
-            // 
+            //
             this.Preset2Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset2Button.Location = new System.Drawing.Point(16, 196);
             this.Preset2Button.Name = "Preset2Button";
@@ -143,9 +139,10 @@
             this.Preset2Button.TabIndex = 5;
             this.Preset2Button.Text = "Preset2";
             this.Preset2Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset2Button.Click += new System.EventHandler(this.Preset2Button_Click);
+            //
             // Preset3Button
-            // 
+            //
             this.Preset3Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset3Button.Location = new System.Drawing.Point(16, 272);
             this.Preset3Button.Name = "Preset3Button";
@@ -153,9 +150,10 @@
             this.Preset3Button.TabIndex = 6;
             this.Preset3Button.Text = "Preset3";
             this.Preset3Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset3Button.Click += new System.EventHandler(this.Preset3Button_Click);
+            //
             // Preset4Button
-            // 
+            //
             this.Preset4Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset4Button.Location = new System.Drawing.Point(16, 348);
             this.Preset4Button.Name = "Preset4Button";
@@ -163,9 +161,10 @@
             this.Preset4Button.TabIndex = 7;
             this.Preset4Button.Text = "Preset4";
             this.Preset4Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset4Button.Click += new System.EventHandler(this.Preset4Button_Click);
+            //
             // Preset5Button
-            // 
+            //
             this.Preset5Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset5Button.Location = new System.Drawing.Point(16, 424);
             this.Preset5Button.Name = "Preset5Button";
@@ -173,9 +172,10 @@
             this.Preset5Button.TabIndex = 8;
             this.Preset5Button.Text = "Preset5";
             this.Preset5Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset5Button.Click += new System.EventHandler(this.Preset5Button_Click);
+            //
             // Preset6Button
-            // 
+            //
             this.Preset6Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset6Button.Location = new System.Drawing.Point(172, 120);
             this.Preset6Button.Name = "Preset6Button";
@@ -183,9 +183,10 @@
             this.Preset6Button.TabIndex = 9;
             this.Preset6Button.Text = "Preset6";
             this.Preset6Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset6Button.Click += new System.EventHandler(this.Preset6Button_Click);
+            //
             // Preset7Button
-            // 
+            //
             this.Preset7Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset7Button.Location = new System.Drawing.Point(172, 196);
             this.Preset7Button.Name = "Preset7Button";
@@ -193,9 +194,10 @@
             this.Preset7Button.TabIndex = 10;
             this.Preset7Button.Text = "Preset7";
             this.Preset7Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset7Button.Click += new System.EventHandler(this.Preset7Button_Click);
+            //
             // Preset8Button
-            // 
+            //
             this.Preset8Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset8Button.Location = new System.Drawing.Point(172, 272);
             this.Preset8Button.Name = "Preset8Button";
@@ -203,9 +205,10 @@
             this.Preset8Button.TabIndex = 11;
             this.Preset8Button.Text = "Preset8";
             this.Preset8Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset8Button.Click += new System.EventHandler(this.Preset8Button_Click);
+            //
             // Preset9Button
-            // 
+            //
             this.Preset9Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset9Button.Location = new System.Drawing.Point(172, 348);
             this.Preset9Button.Name = "Preset9Button";
@@ -213,9 +216,10 @@
             this.Preset9Button.TabIndex = 12;
             this.Preset9Button.Text = "Preset9";
             this.Preset9Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset9Button.Click += new System.EventHandler(this.Preset9Button_Click);
+            //
             // Preset10Button
-            // 
+            //
             this.Preset10Button.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset10Button.Location = new System.Drawing.Point(172, 424);
             this.Preset10Button.Name = "Preset10Button";
@@ -223,99 +227,100 @@
             this.Preset10Button.TabIndex = 13;
             this.Preset10Button.Text = "Preset10";
             this.Preset10Button.UseVisualStyleBackColor = true;
-            // 
+            this.Preset10Button.Click += new System.EventHandler(this.Preset10Button_Click);
+            //
             // Preset1TextBox
-            // 
+            //
             this.Preset1TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset1TextBox.Location = new System.Drawing.Point(356, 122);
             this.Preset1TextBox.Name = "Preset1TextBox";
             this.Preset1TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset1TextBox.TabIndex = 14;
             this.Preset1TextBox.Text = "Preset1";
-            // 
+            //
             // Preset2TextBox
-            // 
+            //
             this.Preset2TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset2TextBox.Location = new System.Drawing.Point(356, 151);
             this.Preset2TextBox.Name = "Preset2TextBox";
             this.Preset2TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset2TextBox.TabIndex = 15;
             this.Preset2TextBox.Text = "Preset2";
-            // 
+            //
             // Preset3TextBox
-            // 
+            //
             this.Preset3TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset3TextBox.Location = new System.Drawing.Point(356, 180);
             this.Preset3TextBox.Name = "Preset3TextBox";
             this.Preset3TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset3TextBox.TabIndex = 16;
             this.Preset3TextBox.Text = "Preset3";
-            // 
+            //
             // Preset4TextBox
-            // 
+            //
             this.Preset4TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset4TextBox.Location = new System.Drawing.Point(356, 209);
             this.Preset4TextBox.Name = "Preset4TextBox";
             this.Preset4TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset4TextBox.TabIndex = 17;
             this.Preset4TextBox.Text = "Preset4";
-            // 
+            //
             // Preset5TextBox
-            // 
+            //
             this.Preset5TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset5TextBox.Location = new System.Drawing.Point(356, 238);
             this.Preset5TextBox.Name = "Preset5TextBox";
             this.Preset5TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset5TextBox.TabIndex = 18;
             this.Preset5TextBox.Text = "Preset5";
-            // 
+            //
             // Preset6TextBox
-            // 
+            //
             this.Preset6TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset6TextBox.Location = new System.Drawing.Point(356, 267);
             this.Preset6TextBox.Name = "Preset6TextBox";
             this.Preset6TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset6TextBox.TabIndex = 19;
             this.Preset6TextBox.Text = "Preset6";
-            // 
+            //
             // Preset7TextBox
-            // 
+            //
             this.Preset7TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset7TextBox.Location = new System.Drawing.Point(356, 296);
             this.Preset7TextBox.Name = "Preset7TextBox";
             this.Preset7TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset7TextBox.TabIndex = 20;
             this.Preset7TextBox.Text = "Preset7";
-            // 
+            //
             // Preset8TextBox
-            // 
+            //
             this.Preset8TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset8TextBox.Location = new System.Drawing.Point(356, 325);
             this.Preset8TextBox.Name = "Preset8TextBox";
             this.Preset8TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset8TextBox.TabIndex = 21;
             this.Preset8TextBox.Text = "Preset8";
-            // 
+            //
             // Preset9TextBox
-            // 
+            //
             this.Preset9TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset9TextBox.Location = new System.Drawing.Point(356, 354);
             this.Preset9TextBox.Name = "Preset9TextBox";
             this.Preset9TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset9TextBox.TabIndex = 22;
             this.Preset9TextBox.Text = "Preset9";
-            // 
+            //
             // Preset10TextBox
-            // 
+            //
             this.Preset10TextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Preset10TextBox.Location = new System.Drawing.Point(356, 383);
             this.Preset10TextBox.Name = "Preset10TextBox";
             this.Preset10TextBox.Size = new System.Drawing.Size(196, 23);
             this.Preset10TextBox.TabIndex = 23;
             this.Preset10TextBox.Text = "Preset10";
-            // 
+            //
             // SetPresetText
-            // 
+            //
             this.SetPresetText.AutoSize = true;
             this.SetPresetText.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.SetPresetText.Location = new System.Drawing.Point(359, 82);
@@ -323,9 +328,9 @@
             this.SetPresetText.Size = new System.Drawing.Size(189, 20);
             this.SetPresetText.TabIndex = 24;
             this.SetPresetText.Text = "プリセットの名前を指定";
-            // 
+            //
             // Num1
-            // 
+            //
             this.Num1.AutoSize = true;
             this.Num1.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num1.Location = new System.Drawing.Point(335, 125);
@@ -333,9 +338,9 @@
             this.Num1.Size = new System.Drawing.Size(15, 16);
             this.Num1.TabIndex = 25;
             this.Num1.Text = "1";
-            // 
+            //
             // Num2
-            // 
+            //
             this.Num2.AutoSize = true;
             this.Num2.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num2.Location = new System.Drawing.Point(335, 154);
@@ -343,9 +348,9 @@
             this.Num2.Size = new System.Drawing.Size(15, 16);
             this.Num2.TabIndex = 26;
             this.Num2.Text = "2";
-            // 
+            //
             // Num3
-            // 
+            //
             this.Num3.AutoSize = true;
             this.Num3.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num3.Location = new System.Drawing.Point(335, 183);
@@ -353,9 +358,9 @@
             this.Num3.Size = new System.Drawing.Size(15, 16);
             this.Num3.TabIndex = 27;
             this.Num3.Text = "3";
-            // 
+            //
             // Num4
-            // 
+            //
             this.Num4.AutoSize = true;
             this.Num4.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num4.Location = new System.Drawing.Point(335, 212);
@@ -363,9 +368,9 @@
             this.Num4.Size = new System.Drawing.Size(15, 16);
             this.Num4.TabIndex = 28;
             this.Num4.Text = "4";
-            // 
+            //
             // Num5
-            // 
+            //
             this.Num5.AutoSize = true;
             this.Num5.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num5.Location = new System.Drawing.Point(335, 241);
@@ -373,9 +378,9 @@
             this.Num5.Size = new System.Drawing.Size(15, 16);
             this.Num5.TabIndex = 29;
             this.Num5.Text = "5";
-            // 
+            //
             // Num6
-            // 
+            //
             this.Num6.AutoSize = true;
             this.Num6.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num6.Location = new System.Drawing.Point(335, 270);
@@ -383,9 +388,9 @@
             this.Num6.Size = new System.Drawing.Size(15, 16);
             this.Num6.TabIndex = 30;
             this.Num6.Text = "6";
-            // 
+            //
             // Num7
-            // 
+            //
             this.Num7.AutoSize = true;
             this.Num7.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num7.Location = new System.Drawing.Point(335, 299);
@@ -393,9 +398,9 @@
             this.Num7.Size = new System.Drawing.Size(15, 16);
             this.Num7.TabIndex = 31;
             this.Num7.Text = "7";
-            // 
+            //
             // Num8
-            // 
+            //
             this.Num8.AutoSize = true;
             this.Num8.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num8.Location = new System.Drawing.Point(335, 328);
@@ -403,9 +408,9 @@
             this.Num8.Size = new System.Drawing.Size(15, 16);
             this.Num8.TabIndex = 32;
             this.Num8.Text = "8";
-            // 
+            //
             // Num9
-            // 
+            //
             this.Num9.AutoSize = true;
             this.Num9.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num9.Location = new System.Drawing.Point(335, 357);
@@ -413,9 +418,9 @@
             this.Num9.Size = new System.Drawing.Size(15, 16);
             this.Num9.TabIndex = 33;
             this.Num9.Text = "9";
-            // 
+            //
             // Num10
-            // 
+            //
             this.Num10.AutoSize = true;
             this.Num10.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Num10.Location = new System.Drawing.Point(331, 386);
@@ -423,9 +428,9 @@
             this.Num10.Size = new System.Drawing.Size(23, 16);
             this.Num10.TabIndex = 34;
             this.Num10.Text = "10";
-            // 
+            //
             // PresetNameApply
-            // 
+            //
             this.PresetNameApply.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.PresetNameApply.Location = new System.Drawing.Point(356, 424);
             this.PresetNameApply.Name = "PresetNameApply";
@@ -434,9 +439,9 @@
             this.PresetNameApply.Text = "変更を適用";
             this.PresetNameApply.UseVisualStyleBackColor = true;
             this.PresetNameApply.Click += new System.EventHandler(this.PresetNameApply_Click);
-            // 
+            //
             // SaveButton
-            // 
+            //
             this.SaveButton.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.SaveButton.Location = new System.Drawing.Point(565, 120);
             this.SaveButton.Name = "SaveButton";
@@ -444,19 +449,21 @@
             this.SaveButton.TabIndex = 36;
             this.SaveButton.Text = "設定を保存する";
             this.SaveButton.UseVisualStyleBackColor = true;
-            // 
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            //
             // ResetButton
-            // 
+            //
             this.ResetButton.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.ResetButton.Location = new System.Drawing.Point(731, 120);
             this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(150, 81);
+            this.ResetButton.Size = new System.Drawing.Size(122, 81);
             this.ResetButton.TabIndex = 37;
             this.ResetButton.Text = "リセット";
             this.ResetButton.UseVisualStyleBackColor = true;
-            // 
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            //
             // Steam
-            // 
+            //
             this.Steam.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.Steam.Location = new System.Drawing.Point(16, 555);
             this.Steam.Name = "Steam";
@@ -464,9 +471,10 @@
             this.Steam.TabIndex = 38;
             this.Steam.Text = "Steamで起動";
             this.Steam.UseVisualStyleBackColor = true;
-            // 
+            this.Steam.Click += new System.EventHandler(this.Steam_Click);
+            //
             // Epic
-            // 
+            //
             this.Epic.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.Epic.Location = new System.Drawing.Point(172, 555);
             this.Epic.Name = "Epic";
@@ -474,9 +482,10 @@
             this.Epic.TabIndex = 39;
             this.Epic.Text = "Epicで起動";
             this.Epic.UseVisualStyleBackColor = true;
-            // 
+            this.Epic.Click += new System.EventHandler(this.Epic_Click);
+            //
             // StartOption
-            // 
+            //
             this.StartOption.AutoSize = true;
             this.StartOption.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.StartOption.Location = new System.Drawing.Point(111, 518);
@@ -484,9 +493,9 @@
             this.StartOption.Size = new System.Drawing.Size(112, 20);
             this.StartOption.TabIndex = 40;
             this.StartOption.Text = "ゲームを起動";
-            // 
+            //
             // OpenModFiles
-            // 
+            //
             this.OpenModFiles.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.OpenModFiles.Location = new System.Drawing.Point(356, 555);
             this.OpenModFiles.Name = "OpenModFiles";
@@ -494,9 +503,10 @@
             this.OpenModFiles.TabIndex = 41;
             this.OpenModFiles.Text = "プリセットフォルダを開く";
             this.OpenModFiles.UseVisualStyleBackColor = true;
-            // 
+            this.OpenModFiles.Click += new System.EventHandler(this.OpenModFiles_Click);
+            //
             // OpenGameDirectory
-            // 
+            //
             this.OpenGameDirectory.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.OpenGameDirectory.Location = new System.Drawing.Point(356, 500);
             this.OpenGameDirectory.Name = "OpenGameDirectory";
@@ -504,9 +514,10 @@
             this.OpenGameDirectory.TabIndex = 42;
             this.OpenGameDirectory.Text = "ゲームディレクトリを開く";
             this.OpenGameDirectory.UseVisualStyleBackColor = true;
-            // 
+            this.OpenGameDirectory.Click += new System.EventHandler(this.OpenGameDirectory_Click);
+            //
             // Chuui
-            // 
+            //
             this.Chuui.AutoSize = true;
             this.Chuui.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.Chuui.Location = new System.Drawing.Point(582, 517);
@@ -516,56 +527,109 @@
             this.Chuui.Text = "処理中に強制終了するのはおやめください。\nこのツールによって発生したいかなる損害にも責任を負いかねます。\n\nこのツールは、AmongUsまたInnersloth " +
     "LLCと提携しておらず、\nこれに含まれるコンテンツは、Innersloth LLC によって承認\nまたはその他の形で後援されているわけではありません。\n©Inn" +
     "ersloth LLC";
-            // 
+            //
             // HowToUse
-            // 
+            //
             this.HowToUse.AutoSize = true;
             this.HowToUse.Font = new System.Drawing.Font("MS UI Gothic", 15F);
-            this.HowToUse.Location = new System.Drawing.Point(592, 220);
+            this.HowToUse.Location = new System.Drawing.Point(594, 354);
             this.HowToUse.Name = "HowToUse";
             this.HowToUse.Size = new System.Drawing.Size(395, 20);
             this.HowToUse.TabIndex = 44;
             this.HowToUse.Text = "【使い方はこちらのDiscordサーバーをご覧ください】";
-            // 
+            //
             // DiscordServerLink
-            // 
+            //
             this.DiscordServerLink.AutoSize = true;
             this.DiscordServerLink.Font = new System.Drawing.Font("MS UI Gothic", 30F);
-            this.DiscordServerLink.Location = new System.Drawing.Point(648, 250);
+            this.DiscordServerLink.Location = new System.Drawing.Point(650, 384);
             this.DiscordServerLink.Name = "DiscordServerLink";
             this.DiscordServerLink.Size = new System.Drawing.Size(266, 40);
             this.DiscordServerLink.TabIndex = 45;
             this.DiscordServerLink.TabStop = true;
             this.DiscordServerLink.Text = "Discord Server";
             this.DiscordServerLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DiscordServerLink_LinkClicked);
-            // 
+            //
             // UpdateButton
-            // 
-            this.UpdateButton.Enabled = false;
+            //
             this.UpdateButton.Font = new System.Drawing.Font("MS UI Gothic", 15F);
-            this.UpdateButton.Location = new System.Drawing.Point(585, 354);
+            this.UpdateButton.Location = new System.Drawing.Point(711, 449);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(231, 81);
+            this.UpdateButton.Size = new System.Drawing.Size(142, 56);
             this.UpdateButton.TabIndex = 46;
-            this.UpdateButton.Text = "アップデート";
+            this.UpdateButton.Text = "Github";
             this.UpdateButton.UseVisualStyleBackColor = true;
-            // 
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            //
             // UpdateIsAllived
-            // 
+            //
             this.UpdateIsAllived.AutoSize = true;
-            this.UpdateIsAllived.Enabled = false;
             this.UpdateIsAllived.Font = new System.Drawing.Font("MS UI Gothic", 18F);
-            this.UpdateIsAllived.Location = new System.Drawing.Point(582, 321);
+            this.UpdateIsAllived.Location = new System.Drawing.Point(585, 449);
             this.UpdateIsAllived.Name = "UpdateIsAllived";
-            this.UpdateIsAllived.Size = new System.Drawing.Size(234, 24);
+            this.UpdateIsAllived.Size = new System.Drawing.Size(120, 48);
             this.UpdateIsAllived.TabIndex = 47;
-            this.UpdateIsAllived.Text = "アップデートがあります！";
-            // 
+            this.UpdateIsAllived.Text = "ソースコード\n配布ページ";
+            //
+            // ChoosingPreset
+            //
+            this.ChoosingPreset.AutoSize = true;
+            this.ChoosingPreset.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.ChoosingPreset.Location = new System.Drawing.Point(586, 221);
+            this.ChoosingPreset.Name = "ChoosingPreset";
+            this.ChoosingPreset.Size = new System.Drawing.Size(208, 27);
+            this.ChoosingPreset.TabIndex = 48;
+            this.ChoosingPreset.Text = "選択中のプリセット";
+            //
+            // PresetName
+            //
+            this.PresetName.AutoSize = true;
+            this.PresetName.Font = new System.Drawing.Font("MS UI Gothic", 30F);
+            this.PresetName.Location = new System.Drawing.Point(583, 257);
+            this.PresetName.Name = "PresetName";
+            this.PresetName.Size = new System.Drawing.Size(137, 40);
+            this.PresetName.TabIndex = 49;
+            this.PresetName.Text = "未選択";
+            //
+            // RemoveVanilla
+            //
+            this.RemoveVanilla.Font = new System.Drawing.Font("MS UI Gothic", 15F);
+            this.RemoveVanilla.Location = new System.Drawing.Point(867, 120);
+            this.RemoveVanilla.Name = "RemoveVanilla";
+            this.RemoveVanilla.Size = new System.Drawing.Size(122, 81);
+            this.RemoveVanilla.TabIndex = 50;
+            this.RemoveVanilla.Text = "バニラに戻す";
+            this.RemoveVanilla.UseVisualStyleBackColor = true;
+            this.RemoveVanilla.Click += new System.EventHandler(this.RemoveVanilla_Click);
+            //
+            // AmongUsDirectory
+            //
+            this.AmongUsDirectory.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.AmongUsDirectory.Location = new System.Drawing.Point(12, 39);
+            this.AmongUsDirectory.Name = "AmongUsDirectory";
+            this.AmongUsDirectory.ReadOnly = true;
+            this.AmongUsDirectory.Size = new System.Drawing.Size(615, 23);
+            this.AmongUsDirectory.TabIndex = 1;
+            //
+            // Version
+            //
+            this.Version.AutoSize = true;
+            this.Version.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.Version.Location = new System.Drawing.Point(942, 9);
+            this.Version.Name = "Version";
+            this.Version.Size = new System.Drawing.Size(64, 16);
+            this.Version.TabIndex = 51;
+            this.Version.Text = "Ver.1.0.0";
+            //
             // AmongUsModChanger
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 642);
+            this.Controls.Add(this.Version);
+            this.Controls.Add(this.RemoveVanilla);
+            this.Controls.Add(this.PresetName);
+            this.Controls.Add(this.ChoosingPreset);
             this.Controls.Add(this.UpdateIsAllived);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.DiscordServerLink);
@@ -627,7 +691,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.OpenFileDialog SelectDirectory;
         private System.Windows.Forms.Button DirectoryBtn;
         private System.Windows.Forms.TextBox AmongUsDirectory;
@@ -677,5 +740,10 @@
         private System.Windows.Forms.LinkLabel DiscordServerLink;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label UpdateIsAllived;
+        private System.Windows.Forms.Label ChoosingPreset;
+        private System.Windows.Forms.Label PresetName;
+        private string LoadingMod = "";
+        private System.Windows.Forms.Button RemoveVanilla;
+        private System.Windows.Forms.Label Version;
     }
 }
